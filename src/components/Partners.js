@@ -9,17 +9,13 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-
 const PartnerLogo = styled('img')({
   height: '40px',
   filter: 'brightness(0) invert(1)',
   opacity: 0.7,
 });
 
-
-
 const Partners = () => {
-    
   return (
       <Box sx={{ bgcolor: '#1A1332', py: 4, mb: 10 }}>
         <Container maxWidth="lg">
@@ -59,5 +55,4 @@ const Partners = () => {
       </Box>
   );
 };
-
 export default Partners;

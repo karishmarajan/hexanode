@@ -1,35 +1,34 @@
-import React, { useState } from 'react';
-import { 
-  Box, 
-  Typography, 
-  Card, 
-  CardContent, 
+import React, { useState } from "react";
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
   IconButton,
   Container,
   styled,
-  useTheme, 
-  Stack
-} from '@mui/material';
+  useTheme,
+} from "@mui/material";
 import chrisRobinson from "../assets/chrisRobinson.png";
 import daliborKruljac from "../assets/daliborKruljac.png";
 import justinModrak from "../assets/justinModrak.png";
-import { ChevronLeft, ChevronRight } from '@mui/icons-material';
+import { ChevronLeft, ChevronRight } from "@mui/icons-material";
+import { CustomHeading } from "../common/CustomHeading";
 
 const NavigationButton = styled(IconButton)(({ theme }) => ({
-  // position: 'absolute',
-  top: '50%',
-  // transform: 'translateY(-50%)',
-  backgroundColor: 'white',
+  position: "absolute",
+  top: "50%",
+  transform: "translateY(-50%)",
+  backgroundColor: "white",
   boxShadow: theme.shadows[2],
-  '&:hover': {
+  "&:hover": {
     backgroundColor: theme.palette.grey[100],
   },
-  '&.Mui-disabled': {
+  "&.Mui-disabled": {
     backgroundColor: theme.palette.grey[100],
     color: theme.palette.grey[400],
   },
 }));
-
 
 const TestimonialSlider = () => {
   const theme = useTheme();
@@ -38,86 +37,70 @@ const TestimonialSlider = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Dalibor Kruljac",
-      company: "KAMELEYA LTD",
-      quote: "Most complete MDM solution I found, and I tested many of them, including major names",
-      image: {justinModrak}
+      name: "Justin Modark",
+      company: "East Troy Community School District",
+      quote: "Hexnode is of great value. Works great with Android and iOS!",
+      image: { justinModrak },
     },
     {
       id: 2,
-      name: "Sarah Johnson",
-      company: "Tech Solutions Inc",
-      quote: "Hexnode has transformed how we manage our device fleet. The support is exceptional.",
-      image: {daliborKruljac}
+      name: "Dalibor Kruljac",
+      company: "KAMELEYA LTD",
+      quote:
+        "Most complete MDM solution I found, and I tested many of them, including major names",
+      image: { daliborKruljac },
     },
     {
       id: 3,
-      name: "Michael Chen",
-      company: "Global Systems Ltd",
-      quote: "The most user-friendly MDM platform with powerful features for enterprise needs.",
-      image: {chrisRobinson}
-    }
+      name: "Chris Robinson",
+      company: "Executive Account Manager, NCS",
+      quote: "It seemed to be in-line with everything we were looking at.",
+      image: { chrisRobinson },
+    },
   ];
 
   const handleNext = () => {
-    console.log('currentIndex', currentIndex)
-    console.log('testimonials', testimonials.length)
     if (currentIndex < testimonials.length - 1) {
-      setCurrentIndex(prev => prev + 1);
+      setCurrentIndex((prev) => prev + 1);
     }
   };
 
   const handlePrevious = () => {
     if (currentIndex > 0) {
-      setCurrentIndex(prev => prev - 1);
+      setCurrentIndex((prev) => prev - 1);
     }
   };
 
   return (
-    <Box bgcolor='#f7f7f7' py={8}>
-    {/* <Container sx={{ py: 8, width: '100%' }} > */}
-      <Typography 
-        variant="h3" 
-        component="h1" 
-        align="center" 
-        sx={{ 
-          mb: 6,
-          fontWeight: 'bold'
-        }}
-      >
-        Why should you choose Hexnode?
-      </Typography>
-
-<Stack direction="column">
-
-
-      {/* <Box sx={{ position: 'relative' }}> */}
-        <NavigationButton 
-          onClick={handlePrevious}
-          disabled={currentIndex === 0}
-          sx={{ left: -20 }}
-          aria-label="Previous testimonial"
-        >
-          <ChevronLeft />
-        </NavigationButton>
-
-          <Card 
+    <Box bgcolor="#f7f7f7" py={8}>
+      <Container sx={{ py: 8, width: "100%" }}>
+        <CustomHeading>Why should you choose Hexnode?</CustomHeading>
+        <Box sx={{ position: "relative" }}>
+          <NavigationButton
+            onClick={handlePrevious}
+            disabled={currentIndex === 0}
+            sx={{ left: -20 }}
+            aria-label="Previous testimonial"
+          >
+            <ChevronLeft />
+          </NavigationButton>
+          <Card
             elevation={3}
             sx={{
-              display: 'flex',
+              display: "flex",
               maxWidth: 900,
-              mx: 'auto',
-              minHeight: 400, // Prevent layout shift
+              mx: "auto",
+              minHeight: 400,
             }}
           >
-            <CardContent 
+            <CardContent
               sx={{
-                display: 'flex',
+                display: "flex",
                 gap: 4,
                 p: 4,
-                '&:last-child': { 
-                  paddingBottom: 4 
-                }
+                "&:last-child": {
+                  paddingBottom: 4,
+                },
               }}
             >
               <Box
@@ -126,8 +109,8 @@ const TestimonialSlider = () => {
                   height: 288,
                   flexShrink: 0,
                   borderRadius: 2,
-                  overflow: 'hidden',
-                  bgcolor: theme.palette.grey[100]
+                  overflow: "hidden",
+                  bgcolor: theme.palette.grey[100],
                 }}
               >
                 <Box
@@ -135,69 +118,71 @@ const TestimonialSlider = () => {
                   src={Object.values(testimonials[currentIndex].image)[0]}
                   alt={testimonials[currentIndex].name}
                   sx={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover'
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
                   }}
                 />
               </Box>
-
-              <Box sx={{ 
-                flex: 1, 
-                display: 'flex', 
-                flexDirection: 'column', 
-                justifyContent: 'center' 
-              }}>
-                <Typography 
-                  variant="h6" 
+              <Box
+                sx={{
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
+                <Typography
+                  variant="h6"
                   component="blockquote"
-                  sx={{ 
+                  sx={{
                     mb: 3,
-                    fontStyle: 'italic',
-                    '&::before': {
-                      content: '"""',
+                    fontStyle: "italic",
+                    position: "relative",
+                    "&::before": {
+                      content: '""',
+                      position: "absolute",
+                      left: -20,
+                      top: 0,
                     },
-                    '&::after': {
-                      content: '"""',
-                    }
+                    "&::after": {
+                      content: '""',
+                      position: "absolute",
+                      right: -20,
+                      top: 0,
+                    },
                   }}
                 >
-                  {testimonials[currentIndex].quote}
+                  <span>“{testimonials[currentIndex].quote}”</span>
                 </Typography>
-                
                 <Box>
-                  <Typography 
-                    variant="subtitle1" 
+                  <Typography
+                    variant="subtitle1"
                     component="p"
-                    sx={{ 
+                    sx={{
                       fontWeight: 600,
-                      mb: 0.5
+                      mb: 0.5,
                     }}
                   >
                     {testimonials[currentIndex].name}
                   </Typography>
-                  <Typography 
-                    variant="body2" 
-                    color="text.secondary"
-                  >
+                  <Typography variant="body2" color="text.secondary">
                     {testimonials[currentIndex].company}
                   </Typography>
                 </Box>
               </Box>
             </CardContent>
           </Card>
-
-        <NavigationButton 
-          onClick={handleNext}
-          disabled={currentIndex === testimonials.length - 1}
-          sx={{ right: -20 }}
-          aria-label="Next testimonial"
-        >
-          <ChevronRight />
-        </NavigationButton>
-      {/* </Box> */}
-      </Stack>
-    {/* </Container> */}
+          <NavigationButton
+            onClick={handleNext}
+            disabled={currentIndex === testimonials.length - 1}
+            sx={{ right: -20 }}
+            aria-label="Next testimonial"
+          >
+            <ChevronRight />
+          </NavigationButton>
+        </Box>
+      </Container>
     </Box>
   );
 };

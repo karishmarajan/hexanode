@@ -23,6 +23,8 @@ import KioskFeatures from "../components/KioskFeatures";
 import TestimonialSlider from "../components/TestimonialSlider";
 import LogoSlider from "../components/LogoSlider";
 import PlatformSection from "../components/PlatformSection";
+import SignUp from "../components/SignUp";
+import Footer from "../components/Footer";
 
 const StyledHero = styled(Box)(({ theme }) => ({
   background: "#03071A",
@@ -33,6 +35,7 @@ const StyledHero = styled(Box)(({ theme }) => ({
 }));
 
 const StyledTextField = styled(TextField)({
+  maxWidth: '300px',
   "& .MuiOutlinedInput-root": {
     backgroundColor: "white",
     borderRadius: "4px",
@@ -43,9 +46,9 @@ const StyledTextField = styled(TextField)({
 });
 
 const StyledButton = styled(Button)({
-  backgroundColor: "#E31B54",
+  backgroundColor: "#d32f2f",
   color: "white",
-  padding: "14px 24px",
+  padding: "8px 24px",
   "&:hover": {
     backgroundColor: "#C41747",
   },
@@ -97,7 +100,7 @@ const LandingPage = (props) => {
     <Box>
       <AppBar elevation={0} component="nav">
         <ChangeOnScroll {...props}>
-          <Toolbar>
+          <Toolbar sx={{ display: 'flex', px: '20px'}}>
             <Typography
               variant="h6"
               component="div"
@@ -113,7 +116,7 @@ const LandingPage = (props) => {
               variant="contained"
               color="error"
               sx={{
-                backgroundColor: "#E31B54",
+                backgroundColor: "#d32f2f",
                 "&:hover": { backgroundColor: "#C41747" },
               }}
             >
@@ -149,13 +152,12 @@ const LandingPage = (props) => {
           <Grid container spacing={6} alignItems="center">
             <Grid item xs={12} md={6}>
               <Typography
-                variant="h3"
-                component="h1"
-                sx={{ mb: 4, fontWeight: "bold" }}
+                fontSize="42px"
+                sx={{ mb: 3, fontWeight: "bold" }}
               >
                 Turn your devices into kiosks in a few minutes with Hexnode UEM
               </Typography>
-              <Box sx={{ display: "flex", gap: 2, maxWidth: 500 }}>
+              <Box display="flex" textAlign="center" justifyContent="center" mb={2} gap={1}>
                 <StyledTextField
                   placeholder="Your Work Email"
                   fullWidth
@@ -165,6 +167,16 @@ const LandingPage = (props) => {
                   GET STARTED NOW!
                 </StyledButton>
               </Box>
+              {/* <Box sx={{ display: "flex", gap: 2, maxWidth: 500 }}>
+                <StyledTextField
+                  placeholder="Your Work Email"
+                  fullWidth
+                  variant="outlined"
+                />
+                <StyledButton variant="contained">
+                  GET STARTED NOW!
+                </StyledButton>
+              </Box> */}
             </Grid>
             <Grid item xs={12} md={6}>
               <DeviceImage src={devices} alt="Hexnode Devices" />
@@ -179,6 +191,8 @@ const LandingPage = (props) => {
       <TestimonialSlider />
       <LogoSlider />
       <PlatformSection />
+      <SignUp />
+      <Footer />
     </Box>
   );
 };

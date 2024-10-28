@@ -55,36 +55,19 @@ const LogoSlider = () => {
     { id: 8, src: {lowes}, alt: "Lowes" },
     { id: 9, src: {hilton}, alt: "Hilton" }
   ];
-  
-  const logoWidth = 300; // Width of each logo box
 
   useEffect(() => {
     const interval = setInterval(() => {
       setPosition((prev) => {
-        const newPos = prev - logoWidth; // Move left by one logo width
-        // If we've moved past the first logo of the original array, reset to start
-        if (Math.abs(newPos) >= (logos.length * logoWidth)) {
-          return 0; // Loop back to the start
+        if (prev <= -(logos.length - 7) * 100) {
+          return 0;
         }
-        return newPos;
+        return prev - 100;
       });
-    }, 3000); // Change every 3 seconds
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [logos.length]);
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setPosition((prev) => {
-  //       if (prev <= -(logos.length - 7) * 100) {
-  //         return 0;
-  //       }
-  //       return prev - 100;
-  //     });
-  //   }, 3000);
-
-  //   return () => clearInterval(interval);
-  // }, [logos.length]);
 
   return (
     <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'center', bgcolor: '#f7f7f7' }} >
