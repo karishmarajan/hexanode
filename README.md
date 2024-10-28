@@ -9,6 +9,8 @@ This is a React application built with Material-UI (MUI) to mock Hexanode soluti
 - Theming support
 - Custom components
 - Easy navigation with React Router
+- MUI tool is used for minimal and easy development.
+- React - 18.3.1
 
 ## Installation
 
