@@ -41,6 +41,7 @@ const SignUp = () => {
         fontSize="42px"
         sx={{ mb: 4, fontWeight: "bold", color: "white" }}
         color="white"
+        aria-describedby="14-days-free-trial"
       >
         Sign up and try Hexnode free for 14 days!
       </Typography>

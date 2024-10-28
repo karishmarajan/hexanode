@@ -16,7 +16,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { CustomButton } from "../components/CustomButton";
-import devices from "../assets/devices.png";
+import hexnodeKiosk from "../assets/hexnodeKiosk.png";
 import Partners from "../components/Partners";
 import KioskModesPage from "../components/KioskModesPage";
 import KioskFeatures from "../components/KioskFeatures";
@@ -167,19 +167,9 @@ const LandingPage = (props) => {
                   GET STARTED NOW!
                 </StyledButton>
               </Box>
-              {/* <Box sx={{ display: "flex", gap: 2, maxWidth: 500 }}>
-                <StyledTextField
-                  placeholder="Your Work Email"
-                  fullWidth
-                  variant="outlined"
-                />
-                <StyledButton variant="contained">
-                  GET STARTED NOW!
-                </StyledButton>
-              </Box> */}
             </Grid>
             <Grid item xs={12} md={6}>
-              <DeviceImage src={devices} alt="Hexnode Devices" />
+              <DeviceImage src={hexnodeKiosk} alt="Hexnode Devices" />
             </Grid>
           </Grid>
         </Container>

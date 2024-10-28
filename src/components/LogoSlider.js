@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Container } from '@mui/material';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import costco from '../assets/logos/costco.png'
 import hilton from '../assets/logos/hilton.png'
@@ -12,10 +12,11 @@ import polaris from '../assets/logos/polaris.png'
 import lowes from '../assets/logos/lowes.png'
 
 const SliderContainer = styled(Box)({
-  position: 'relative',
-  height: '40vh',
+  height: '30vh',
   width: '900px',
   overflow: 'hidden',
+  marginLeft: '20px',
+  marginRight: '20px',
 });
 
 const SliderTrack = styled(Box)(({ transform }) => ({
@@ -36,8 +37,8 @@ const LogoBox = styled(Box)({
 const LogoImage = styled('img')({
   maxWidth: '100%',
   maxHeight: '100%',
-  minWidth: '100px',
-  minHeight: '100px',
+  minWidth: '120px',
+  minHeight: '120px',
   objectFit: 'contain',
 });
 
@@ -70,7 +71,7 @@ const LogoSlider = () => {
   }, [logos.length]);
 
   return (
-    <Container maxWidth="xl" sx={{ display: 'flex', justifyContent: 'center', bgcolor: '#f7f7f7' }} >
+    <Box sx={{ display: 'flex', justifyContent: 'center', bgcolor: '#f7f7f7' }} >
       <SliderContainer>
         <SliderTrack transform={position}>
           {logos.map((logo) => (
@@ -84,7 +85,7 @@ const LogoSlider = () => {
           ))}
         </SliderTrack>
       </SliderContainer>
-    </Container>
+    </Box>
   );
 };
 

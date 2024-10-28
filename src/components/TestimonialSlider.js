@@ -72,8 +72,8 @@ const TestimonialSlider = () => {
   };
 
   return (
-    <Box bgcolor="#f7f7f7" py={8}>
-      <Container sx={{ py: 8, width: "100%" }}>
+    <Box bgcolor="#f7f7f7">
+      <Container sx={{ py: 2, width: "100%" }}>
         <CustomHeading>Why should you choose Hexnode?</CustomHeading>
         <Box sx={{ position: "relative" }}>
           <NavigationButton

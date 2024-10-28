@@ -16,7 +16,7 @@ const ItemDetails = styled(Typography)({
 
 const KioskFeatures = () => {
   return (
-    <Container maxWidth="lg" sx={{ padding: 4 }}>
+    <Container maxWidth="lg" sx={{ padding: 4, marginBottom: '16px' }}>
       <Grid container spacing={6} alignItems="center">
         <CustomHeading>
           What additional possibilities does the Kiosk mode offer?
