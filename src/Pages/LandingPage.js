@@ -1,0 +1,186 @@
+import React from "react";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Container,
+  Card,
+  CardContent,
+  Grid,
+  AppBar,
+  Toolbar,
+  Drawer,
+  Divider,
+  useScrollTrigger,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { CustomButton } from "../components/CustomButton";
+import devices from "../assets/devices.png";
+import Partners from "../components/Partners";
+import KioskModesPage from "../components/KioskModesPage";
+import KioskFeatures from "../components/KioskFeatures";
+import TestimonialSlider from "../components/TestimonialSlider";
+import LogoSlider from "../components/LogoSlider";
+import PlatformSection from "../components/PlatformSection";
+
+const StyledHero = styled(Box)(({ theme }) => ({
+  background: "#03071A",
+  minHeight: "65vh",
+  color: "white",
+  position: "relative",
+  padding: `${theme.spacing(18)} ${theme.spacing(0)} ${theme.spacing(0)} ${theme.spacing(0)}`,
+}));
+
+const StyledTextField = styled(TextField)({
+  "& .MuiOutlinedInput-root": {
+    backgroundColor: "white",
+    borderRadius: "4px",
+    "& fieldset": {
+      borderColor: "transparent",
+    },
+  },
+});
+
+const StyledButton = styled(Button)({
+  backgroundColor: "#E31B54",
+  color: "white",
+  padding: "14px 24px",
+  "&:hover": {
+    backgroundColor: "#C41747",
+  },
+});
+
+const DeviceImage = styled("img")({
+  maxWidth: "100%",
+  height: "auto",
+  position: "relative",
+  top: "20px",
+});
+const drawerWidth = 240;
+function ChangeOnScroll(props) {
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement(children, {
+    sx: {
+      backgroundColor: trigger ? "#ffff" : "#0a061e", // Change color based on scroll
+      transition: "background-color 0.3s ease", // Smooth transition
+    },
+  });
+}
+
+const LandingPage = (props) => {
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
+
+  const drawer = (
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        hexnode
+      </Typography>
+      <Typography variant="h6" sx={{ my: 2 }}>
+        Login
+      </Typography>
+      <Divider />
+    </Box>
+  );
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+  return (
+    <Box>
+      <AppBar elevation={0} component="nav">
+        <ChangeOnScroll {...props}>
+          <Toolbar>
+            <Typography
+              variant="h6"
+              component="div"
+              sx={{
+                flexGrow: 1,
+                display: { xs: "none", sm: "block" },
+                color: props.trigger ? "#00000" : "#ffff",
+              }}
+            >
+              hexnode
+            </Typography>
+            <Button
+              variant="contained"
+              color="error"
+              sx={{
+                backgroundColor: "#E31B54",
+                "&:hover": { backgroundColor: "#C41747" },
+              }}
+            >
+              14 DAY FREE TRIAL
+            </Button>
+          </Toolbar>
+        </ChangeOnScroll>
+      </AppBar>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true,
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+
+      {/* Hero Section */}
+      <StyledHero>
+        <Container maxWidth="lg">
+          <Grid container spacing={6} alignItems="center">
+            <Grid item xs={12} md={6}>
+              <Typography
+                variant="h3"
+                component="h1"
+                sx={{ mb: 4, fontWeight: "bold" }}
+              >
+                Turn your devices into kiosks in a few minutes with Hexnode UEM
+              </Typography>
+              <Box sx={{ display: "flex", gap: 2, maxWidth: 500 }}>
+                <StyledTextField
+                  placeholder="Your Work Email"
+                  fullWidth
+                  variant="outlined"
+                />
+                <StyledButton variant="contained">
+                  GET STARTED NOW!
+                </StyledButton>
+              </Box>
+            </Grid>
+            <Grid item xs={12} md={6}>
+              <DeviceImage src={devices} alt="Hexnode Devices" />
+            </Grid>
+          </Grid>
+        </Container>
+      </StyledHero>
+
+      <Partners />
+      <KioskModesPage />
+      <KioskFeatures />
+      <TestimonialSlider />
+      <LogoSlider />
+      <PlatformSection />
+    </Box>
+  );
+};
+
+export default LandingPage;
