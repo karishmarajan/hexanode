@@ -22,7 +22,7 @@ const KioskFeatures = () => {
           What additional possibilities does the Kiosk mode offer?
         </CustomHeading>
         <Grid item xs={12} md={6}>
-          <Box sx={{ position: "relative" }}>
+          <Box sx={{ position: "relative" }} aria-labelledby="kiosk-mode-section">
             <img
               src={device}
               alt="Kiosk Interface"
@@ -65,6 +65,7 @@ const KioskFeatures = () => {
           <Link
             href="https://www.hexnode.com/mobile-device-management/cloud/signup/"
             color="error"
+            aria-label="SignUp"
             sx={{
               textDecoration: "none",
               "&:hover": {
@@ -74,10 +75,10 @@ const KioskFeatures = () => {
           >
             TRY FOR FREE {">"}
           </Link>
-          <ItemHeading mb={6}>Customized interface for brand visibility</ItemHeading>
-          <ItemHeading mb={6}>What more can you do with Hexnode kiosk?</ItemHeading>
-          <ItemHeading mb={6}>Secure and update your app ecosystem</ItemHeading>
-          <ItemHeading mb={6}>Provide an easy-to-use interface for end-users</ItemHeading>
+          <ItemHeading mb={6} aria-describedby="brand-visibility-description">Customized interface for brand visibility</ItemHeading>
+          <ItemHeading mb={6} aria-describedby="more-features">What more can you do with Hexnode kiosk?</ItemHeading>
+          <ItemHeading mb={6} aria-describedby="security-description">Secure and update your app ecosystem</ItemHeading>
+          <ItemHeading mb={6} aria-describedby="end-user-benefits">Provide an easy-to-use interface for end-users</ItemHeading>
         </Grid>
       </Grid>
     </Container>

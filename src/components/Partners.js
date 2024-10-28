@@ -17,7 +17,7 @@ const PartnerLogo = styled('img')({
 
 const Partners = () => {
   return (
-      <Box sx={{ bgcolor: '#1A1332', py: 4, mb: 10 }}>
+      <Box sx={{ bgcolor: '#1A1332', py: 4, mb: 10 }} aria-labelledby="partners">
         <Container maxWidth="lg">
           <Grid container spacing={4} justifyContent="space-between" alignItems="center">
             <Grid item xs={12} md={4}>

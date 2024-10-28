@@ -75,7 +75,7 @@ const KioskModesPage = () => {
   ];
 
   return (
-    <Box sx={{ maxWidth: 1200, margin: "0 auto", p: 4, mb: 10 }}>
+    <Box sx={{ maxWidth: 1200, margin: "0 auto", p: 4, mb: 10 }} aria-labelledby="kiosk-modes">
       <CustomHeading>Specific kiosk modes for unique use cases</CustomHeading>
       <Tabs
         value={selectedTab}

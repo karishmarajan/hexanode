@@ -64,6 +64,7 @@ const SignUp = () => {
         <Link
           href="https://www.hexnode.com/mobile-device-management/request-demo/"
           color="error"
+          aria-label="Demo"
           sx={{
             textDecoration: "none",
             "&:hover": {

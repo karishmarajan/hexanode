@@ -16,7 +16,7 @@ const KioskModeCard = ({ data }) => {
     <Card sx={{ bgcolor: "grey.50" }}>
       <CardContent sx={{ display: "flex", gap: 4, p: 4 }}>
         <Box sx={{ flex: 1 }}>
-          <Typography fontSize="28px" fontWeight="bold" sx={{ mb: 3 }}>
+          <Typography fontSize="28px" fontWeight="bold" sx={{ mb: 3 }} aria-describedby={data.title}>
             {data.title}
           </Typography>
           <List>

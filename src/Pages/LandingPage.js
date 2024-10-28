@@ -84,11 +84,11 @@ const LandingPage = (props) => {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }}>
-      <Typography variant="h6" sx={{ my: 2 }}>
+    <Box onClick={handleDrawerToggle} sx={{ textAlign: "center" }} aria-labelledby="header">
+      <Typography variant="h6" sx={{ my: 2 }} aria-describedby="hexnode">
         hexnode
       </Typography>
-      <Typography variant="h6" sx={{ my: 2 }}>
+      <Typography variant="h6" sx={{ my: 2 }} aria-describedby="Login">
         Login
       </Typography>
       <Divider />

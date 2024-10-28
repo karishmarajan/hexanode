@@ -38,7 +38,7 @@ const platformData = [
 
 const PlatformSection = () => {
   return (
-        <Box sx={{ py: 8, textAlign: 'center' }}>
+        <Box sx={{ py: 8, textAlign: 'center' }} aria-labelledby="supported-platforms">
           <CustomHeading>Platforms supported</CustomHeading>
           <Grid 
             container 

@@ -12,10 +12,11 @@ const Footer = () => {
         sx={{ color: "grey.800" }}
       >
         <Grid item>
-          <Box sx={{ display: "flex" }}>
+          <Box sx={{ display: "flex" }} aria-labelledby="policy-footer">
             <Link
               href="https://www.hexnode.com/legal/terms-of-use/"
               color="inherit"
+              aria-label="Terms of Use"
               sx={{
                 fontSize: "12px",
                 textDecoration: "none",
@@ -36,6 +37,7 @@ const Footer = () => {
                   color: "grey.800",
                 },
               }}
+              aria-label="Privacy policy"
             >
               {`Privacy - `}
             </Link>
@@ -49,13 +51,14 @@ const Footer = () => {
                   color: "grey.800",
                 },
               }}
+              aria-label="Cookies policy"
             >
               Cookies
             </Link>
           </Box>
         </Grid>
         <Grid item>
-          <Typography fontSize="12px">
+          <Typography fontSize="12px" aria-describedby="copyright-description">
             Copyright © 2024 Mitsogo Inc. All Rights Reserved.
           </Typography>
         </Grid>

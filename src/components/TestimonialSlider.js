@@ -152,6 +152,7 @@ const TestimonialSlider = () => {
                       top: 0,
                     },
                   }}
+                  aria-describedby={testimonials[currentIndex].quote}
                 >
                   <span>“{testimonials[currentIndex].quote}”</span>
                 </Typography>
@@ -163,10 +164,11 @@ const TestimonialSlider = () => {
                       fontWeight: 600,
                       mb: 0.5,
                     }}
+                    aria-describedby={testimonials[currentIndex].name}
                   >
                     {testimonials[currentIndex].name}
                   </Typography>
-                  <Typography variant="body2" color="text.secondary">
+                  <Typography variant="body2" color="text.secondary" aria-describedby={testimonials[currentIndex].company}>
                     {testimonials[currentIndex].company}
                   </Typography>
                 </Box>
