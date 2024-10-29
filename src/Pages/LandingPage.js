@@ -5,8 +5,6 @@ import {
   TextField,
   Button,
   Container,
-  Card,
-  CardContent,
   Grid,
   AppBar,
   Toolbar,
@@ -96,6 +94,7 @@ const LandingPage = (props) => {
   );
   const container =
     window !== undefined ? () => window().document.body : undefined;
+    const trigger = useScrollTrigger({ target: window ? window() : undefined });
   return (
     <Box>
       <AppBar elevation={0} component="nav">
@@ -104,10 +103,10 @@ const LandingPage = (props) => {
             <Typography
               variant="h6"
               component="div"
+              color={trigger ? "black.main" : "#ffff"}
               sx={{
                 flexGrow: 1,
                 display: { xs: "none", sm: "block" },
-                color: props.trigger ? "#00000" : "#ffff",
               }}
             >
               hexnode
@@ -146,7 +145,6 @@ const LandingPage = (props) => {
         </Drawer>
       </nav>
 
-      {/* Hero Section */}
       <StyledHero>
         <Container maxWidth="lg">
           <Grid container spacing={6} alignItems="center">
